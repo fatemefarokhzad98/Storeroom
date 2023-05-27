@@ -2,7 +2,7 @@
 {
     public static class DataStorage
     {
-        private static List<StorageModel> storageModels = new List<StorageModel>()
+        private static List<StorageModel> _storageModels = new List<StorageModel>()
         {
             new StorageModel()
 
@@ -53,9 +53,56 @@
 
 
         };
+        public static void AddProducts( StorageModel storageModel)
+        {//اینجا راه های دیگش که از خطا جلوگیری میکنه چیه
+            storageModel.Id = _storageModels.Last().Id + 1;
+            _storageModels.Add(storageModel);
 
-      
-        
+        }
+        public static StorageModel DeleteProducts( StorageModel storageModel)
+        {
+            var products = _storageModels.Where(x => x.Id == storageModel.Id).FirstOrDefault();
+            _storageModels.Remove(products);
+
+            return products;
+        }
+        public static List<StorageModel> ShowProducts()
+        {
+            return _storageModels;
+
+        }
+        public static void EditProducts( StorageModel storageModel)
+        {
+            //var storagemodels = _storageModels.Where(x => x.Id == storageModel.Id).FirstOrDefault();
+            //if (storagemodels != null)
+            //{
+            //    storagemodels.Model = storageModel.Model;
+            //    storagemodels.Brand = storageModel.Brand;
+            //    storagemodels.Groups = storageModel.Groups;
+            //    storagemodels.Color = storageModel.Color;
+
+            //}
+            //else
+            //{
+            //    AddProducts();
+            //}
+            var storagemodels = _storageModels.Where(x => x.Id == storageModel.Id).FirstOrDefault();
+            storagemodels.Model = storageModel.Model;
+              storagemodels.Brand = storageModel.Brand;
+              storagemodels.Groups = storageModel.Groups;
+               storagemodels.Color = storageModel.Color;
+        }
+        public static StorageModel DetailsProducts(int id)
+        {
+            var products = _storageModels.Where(x => x.Id == id).FirstOrDefault();
+            return products;
+
+
+        }
+
+
+
+
 
 
 
