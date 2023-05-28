@@ -34,7 +34,7 @@ namespace Storeroommanagement.Controllers
         {
            
 
-            return View(id);
+            return View(DataStorage.GetId(id));
         }
         [HttpPost]
         public IActionResult EditProduct(StorageModel storageModel)

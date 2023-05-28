@@ -88,6 +88,12 @@
 
 
         }
+        public static StorageModel GetId(int id)
+        {
+            var idproduct= _storageModels.Where(x=>x.Id==id).FirstOrDefault();
+            return idproduct;
+
+        }
 
 
 
