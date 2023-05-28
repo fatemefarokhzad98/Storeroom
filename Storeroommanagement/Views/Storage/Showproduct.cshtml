@@ -1,1 +1,29 @@
-﻿
+﻿@model List<StorageModel>
+<div class="container mt-3">
+    
+  <h2>Table Mobile</h2>
+  
+  <table class="table"  >
+    <thead class="table-dark">
+      <tr>
+        <th>Id</th>
+        <th>Model</th>
+        <th>Color</th>
+        <th>Brand</th>
+        <th>Groups</th>
+      </tr>
+    </thead>
+    @foreach(var  item in Model){
+    <tbody>
+      <tr>
+        <td>@item.Id</td>
+        <td>@item.Model</td>
+        <td>@item.Color</td>
+                <td >@item.Groupsenum</td>
+
+       
+        <td>@item.Brands</td>
+      </tr>
+    
+    </tbody>}
+    </div>

@@ -6,15 +6,15 @@
 </h3>
 <form asp-controller="Storage" asp-action="AddProduct" method="post">
     <div class="form-outline mb-4">
-    <input type="@Model.Id" class="form-control" asp-for="Id" disabled/>
+    <input type="text" class="form-control" asp-for="Id" disabled/>
     <label class="form-label"asp-for="Id"    >Id</label>
   </div
   ><div class="form-outline mb-4">
-    <input type="@Model.Model" asp-for="Model" class="form-control" />
+    <input type="text" asp-for="Model" class="form-control" />
     <label class="form-label" asp-for="Model">Model</label>
   </div>
   <div class="form-outline mb-4">
-    <input type="@Model.Color"  asp-for="Color" class="form-control" />
+    <input type="text"  asp-for="Color" class="form-control" />
     <label class="form-label"  asp-for="Color">Color</label>
   </div>
   <div class="form-outline mb-4">
