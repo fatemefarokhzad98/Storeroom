@@ -18,17 +18,13 @@ namespace Storeroommanagement.Controllers
             DataStorage.AddProducts(storageModel);
             return RedirectToAction("ShowProduct");
         }
-        [HttpPost]
-        public IActionResult DeleteProduct(StorageModel storageModel)
-        {
-            DataStorage.DeleteProducts(storageModel);
-            return RedirectToAction("ShowProduct");
-        }
+        
         public IActionResult DeleteProduct(int id)
         {
-            var propduct = DataStorage.GetId(id);
-            return View(propduct);
+            DataStorage.DeleteProducts(id);
+            return View();
         }
+      
         [HttpGet]
         public IActionResult  EditProduct(int id)
         {

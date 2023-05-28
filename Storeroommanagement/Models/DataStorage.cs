@@ -59,12 +59,12 @@
             _storageModels.Add(storageModel);
 
         }
-        public static StorageModel DeleteProducts( StorageModel storageModel)
+        public static void DeleteProducts( int id)
         {
-            var products = _storageModels.Where(x => x.Id == storageModel.Id).FirstOrDefault();
-            _storageModels.Remove(products);
+            var product= _storageModels.Where(x => x.Id == id).FirstOrDefault();
+            _storageModels.Remove(product);
 
-            return products;
+            
         }
         public static List<StorageModel> ShowProducts()
         {
