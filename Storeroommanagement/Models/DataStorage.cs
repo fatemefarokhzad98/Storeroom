@@ -1,9 +1,19 @@
-﻿namespace Storeroommanagement.Models
+﻿
+
+using System.Globalization;
+using System.Text;
+
+namespace Storeroommanagement.Models
+
 {
     public static class DataStorage
     {
+       
+
+        //میخوام به صورت پیش فرض هم به داده هایی که از قبل نشتم یه ساعتی رو بگم
         private static List<StorageModel> _storageModels = new List<StorageModel>()
         {
+            
             new StorageModel()
 
             {
@@ -12,6 +22,8 @@
                 Color="black",
                Brands=Enum.Brands.BrandEnum.Asus,
                Groupsenum=Enum.Groups.GroupsEnum.LopTop
+                
+              
 
 
             },
@@ -57,12 +69,15 @@
         {//اینجا راه های دیگش که از خطا جلوگیری میکنه چیه
             storageModel.Id = _storageModels.Last().Id + 1;
             _storageModels.Add(storageModel);
+           
+            MiladiToShamsi(DateTime.Now);
 
         }
         public static void DeleteProducts( int id)
         {
             var product= _storageModels.Where(x => x.Id == id).FirstOrDefault();
             _storageModels.Remove(product);
+            MiladiToShamsi(DateTime.Now);
 
             
         }
@@ -94,8 +109,18 @@
             return idproduct;
 
         }
-
-
+        public static string MiladiToShamsi(DateTime dateTime)
+        {
+            PersianCalendar persianCalendar = new PersianCalendar();
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(persianCalendar.GetYear(dateTime).ToString("0000"));
+            stringBuilder.Append("/");
+            stringBuilder.Append(persianCalendar.GetMonth(dateTime).ToString("00"));
+            stringBuilder.Append("/");
+            stringBuilder.Append(persianCalendar.GetDayOfMonth(dateTime).ToString("00"));
+            return stringBuilder.ToString();
+        }
+      
 
 
 
