@@ -6,7 +6,20 @@
         public int Id { get; set; }
         public string Color { get; set; }
         public string Model { get; set; }
-        public GroupsEnum.Groups Groups { get; set; }
-        public BrandEnum.Brand Brand { get; set; }
+        public Groups Groupsenum { get; set; }
+        public Brand Brands { get; set; }
+        public enum Groups
+        {
+            LopTop = 1,
+            Mobile
+
+        }
+        public enum Brand
+        {
+            Huawi = 1,
+            Samsung,
+            Lenovo,
+            Asus
+        }
     }
 }

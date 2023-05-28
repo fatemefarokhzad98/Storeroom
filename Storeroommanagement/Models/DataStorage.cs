@@ -10,8 +10,8 @@
                 Id=1,
                 Model="A10",
                 Color="black",
-                Brand=BrandEnum.Brand.Asus,
-                Groups=GroupsEnum.Groups.LopTop
+               Brands=StorageModel.Brand.Lenovo,
+               Groupsenum=StorageModel.Groups.LopTop
 
 
             },
@@ -21,8 +21,8 @@
                 Id=2,
                 Model="A30",
                 Color="green",
-                Brand=BrandEnum.Brand.Samsung,
-                Groups=GroupsEnum.Groups.Mobile
+                Brands=StorageModel.Brand.Samsung,
+                Groupsenum=StorageModel.Groups.Mobile
 
 
             },
@@ -32,8 +32,8 @@
                 Id=3,
                 Model="A50",
                 Color="blue",
-                Brand=BrandEnum.Brand.Lenovo,
-                Groups=GroupsEnum.Groups.LopTop
+               Brands=StorageModel.Brand.Asus,
+                Groupsenum=StorageModel.Groups.LopTop
 
 
             },
@@ -43,8 +43,8 @@
                 Id=4,
                 Model="A70",
                 Color="yellow",
-                Brand=BrandEnum.Brand.Huawi,
-                Groups=GroupsEnum.Groups.Mobile
+                Brands=StorageModel.Brand.Huawi,
+                Groupsenum=StorageModel.Groups.Mobile
 
 
             },
@@ -88,8 +88,8 @@
             //}
             var storagemodels = _storageModels.Where(x => x.Id == storageModel.Id).FirstOrDefault();
             storagemodels.Model = storageModel.Model;
-              storagemodels.Brand = storageModel.Brand;
-              storagemodels.Groups = storageModel.Groups;
+              storagemodels.Brands = storageModel.Brands;
+              storagemodels.Groupsenum = storageModel.Groupsenum;
                storagemodels.Color = storageModel.Color;
         }
         public static StorageModel DetailsProducts(int id)
