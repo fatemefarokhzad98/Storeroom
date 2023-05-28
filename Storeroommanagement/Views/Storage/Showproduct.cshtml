@@ -1,6 +1,8 @@
 ﻿@using static Storeroommanagement.Enum.Groups
 @model List<StorageModel>
-<div class="container mt-3">
+  
+
+   <div class="container mt-3">
     
   <h2>Table Mobile</h2>
   
@@ -12,31 +14,35 @@
         <th>Color</th>
         <th>Brand</th>
         <th>Action</th>
-       
+
+        
       </tr>
     </thead>
     @foreach(var  item in Model){
            
                 @if (item.Groupsenum == GroupsEnum.Mobile)
-                { <tbody>
+                {
+                     <tbody>
                     <tr>
                         <td>@item.Id</td>
         <td>@item.Model</td>
         <td>@item.Color</td>
-               
+                
         <td>@item.Brands</td>
-         <td>@item.Brands</td>
          <td>
-         
-            <a type="button" class="btn btn-success" asp-controller="Storage" asp-action="EditProduct" ><i class="fas fa-edit"></i>edit</a>
+            
+             <a type="button" class="btn btn-success" asp-controller="Storage" asp-action="EditProduct" ><i class="fas fa-edit">edit</i></a>
             <a type="button" class="btn btn-danger" asp-controller="Storage" asp-action="DeleteProduct"><i class="far fa-trash-alt">delete</i></a>              
                          
          </td>
       </tr>
-        
-    </tbody>}}
+      
+    </tbody>  }}
     </table>
     </div>
+    <a type="submit"  class=" btn btn-info  "    asp-controller="Storage" asp-action="AddProduct"  >AddProduct
+
+    </a>
    
     
 
