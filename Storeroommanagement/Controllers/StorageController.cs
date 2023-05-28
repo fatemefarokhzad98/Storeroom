@@ -6,7 +6,7 @@ namespace Storeroommanagement.Controllers
     
     public class StorageController : Controller
     {
-        
+        StorageModel storageModel=new StorageModel();
        
         public IActionResult AddProduct()
         {
@@ -29,9 +29,12 @@ namespace Storeroommanagement.Controllers
 
             return View();
         }
-        public IActionResult  EditProduct()
+        [HttpGet]
+        public IActionResult  EditProduct(int id)
         {
-            return View();
+           
+
+            return View(id);
         }
         [HttpPost]
         public IActionResult EditProduct(StorageModel storageModel)

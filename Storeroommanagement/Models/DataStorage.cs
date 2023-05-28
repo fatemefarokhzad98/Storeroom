@@ -73,24 +73,13 @@
         }
         public static void EditProducts( StorageModel storageModel)
         {
-            //var storagemodels = _storageModels.Where(x => x.Id == storageModel.Id).FirstOrDefault();
-            //if (storagemodels != null)
-            //{
-            //    storagemodels.Model = storageModel.Model;
-            //    storagemodels.Brand = storageModel.Brand;
-            //    storagemodels.Groups = storageModel.Groups;
-            //    storagemodels.Color = storageModel.Color;
-
-            //}
-            //else
-            //{
-            //    AddProducts();
-            //}
+           //مدیریت خطا
             var storagemodels = _storageModels.Where(x => x.Id == storageModel.Id).FirstOrDefault();
             storagemodels.Model = storageModel.Model;
-              storagemodels.Brands = storageModel.Brands;
-              storagemodels.Groupsenum = storageModel.Groupsenum;
-               storagemodels.Color = storageModel.Color;
+            storagemodels.Color = storageModel.Color;
+            storagemodels.Brands = storageModel.Brands;
+            storagemodels.Groupsenum=storageModel.Groupsenum;
+        
         }
         public static StorageModel DetailsProducts(int id)
         {

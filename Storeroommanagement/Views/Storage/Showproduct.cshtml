@@ -11,24 +11,30 @@
         <th>Model</th>
         <th>Color</th>
         <th>Brand</th>
-        <th>Groups</th>
+        <th>Action</th>
+       
       </tr>
     </thead>
     @foreach(var  item in Model){
-            <tbody>
+           
                 @if (item.Groupsenum == GroupsEnum.Mobile)
-                {
+                { <tbody>
                     <tr>
                         <td>@item.Id</td>
         <td>@item.Model</td>
         <td>@item.Color</td>
-                
-
-       
+               
         <td>@item.Brands</td>
+         <td>@item.Brands</td>
+         <td>
+         
+            <a type="button" class="btn btn-success" asp-controller="Storage" asp-action="EditProduct" ><i class="fas fa-edit"></i>edit</a>
+            <a type="button" class="btn btn-danger" asp-controller="Storage" asp-action="DeleteProduct"><i class="far fa-trash-alt">delete</i></a>              
+                         
+         </td>
       </tr>
-        }
-    </tbody>}
+        
+    </tbody>}}
     </table>
     </div>
    
@@ -45,24 +51,31 @@
         <th>Model</th>
         <th>Color</th>
         <th>Brand</th>
-        <th>Groups</th>
+        <th>Action</th>
+
+        
       </tr>
     </thead>
     @foreach(var  item in Model){
-            <tbody>
+           
                 @if (item.Groupsenum == GroupsEnum.LopTop)
                 {
+                     <tbody>
                     <tr>
                         <td>@item.Id</td>
         <td>@item.Model</td>
         <td>@item.Color</td>
                 
-
-       
         <td>@item.Brands</td>
+         <td>
+            
+             <a type="button" class="btn btn-success" asp-controller="Storage" asp-action="EditProduct" ><i class="fas fa-edit">edit</i></a>
+            <a type="button" class="btn btn-danger" asp-controller="Storage" asp-action="DeleteProduct"><i class="far fa-trash-alt">delete</i></a>              
+                         
+         </td>
       </tr>
-        }
-    </tbody>}
+      
+    </tbody>  }}
     </table>
     </div>
     <a type="submit"  class=" btn btn-info  "    asp-controller="Storage" asp-action="AddProduct"  >AddProduct
