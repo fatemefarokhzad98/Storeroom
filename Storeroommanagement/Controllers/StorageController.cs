@@ -24,10 +24,10 @@ namespace Storeroommanagement.Controllers
             DataStorage.DeleteProducts(storageModel);
             return RedirectToAction("ShowProduct");
         }
-        public IActionResult DeleteProduct()
+        public IActionResult DeleteProduct(int id)
         {
-
-            return View();
+            var propduct = DataStorage.GetId(id);
+            return View(propduct);
         }
         [HttpGet]
         public IActionResult  EditProduct(int id)
