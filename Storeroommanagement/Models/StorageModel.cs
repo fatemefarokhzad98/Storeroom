@@ -1,4 +1,7 @@
-﻿namespace Storeroommanagement.Models
+﻿using static Storeroommanagement.Enum.Brands;
+using static Storeroommanagement.Enum.Groups;
+
+namespace Storeroommanagement.Models
 {
     public class StorageModel
     {
@@ -6,20 +9,8 @@
         public int Id { get; set; }
         public string Color { get; set; }
         public string Model { get; set; }
-        public Groups Groupsenum { get; set; }
-        public Brand Brands { get; set; }
-        public enum Groups
-        {
-            LopTop = 1,
-            Mobile
-
-        }
-        public enum Brand
-        {
-            Huawi = 1,
-            Samsung,
-            Lenovo,
-            Asus
-        }
+        public GroupsEnum Groupsenum { get; set; }
+        public BrandEnum Brands { get; set; }
+       
     }
 }

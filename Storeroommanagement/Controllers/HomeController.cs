@@ -8,6 +8,7 @@ namespace Storeroommanagement.Controllers
     {
        
 
+
         public IActionResult Index()
         {
             return View();

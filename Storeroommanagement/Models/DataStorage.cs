@@ -10,8 +10,8 @@
                 Id=1,
                 Model="A10",
                 Color="black",
-               Brands=StorageModel.Brand.Lenovo,
-               Groupsenum=StorageModel.Groups.LopTop
+               Brands=Enum.Brands.BrandEnum.Asus,
+               Groupsenum=Enum.Groups.GroupsEnum.LopTop
 
 
             },
@@ -21,8 +21,8 @@
                 Id=2,
                 Model="A30",
                 Color="green",
-                Brands=StorageModel.Brand.Samsung,
-                Groupsenum=StorageModel.Groups.Mobile
+                Brands=Enum.Brands.BrandEnum.Samsung,
+                Groupsenum=Enum.Groups.GroupsEnum.Mobile
 
 
             },
@@ -32,8 +32,8 @@
                 Id=3,
                 Model="A50",
                 Color="blue",
-               Brands=StorageModel.Brand.Asus,
-                Groupsenum=StorageModel.Groups.LopTop
+               Brands=Enum.Brands.BrandEnum.Asus,
+                Groupsenum=Enum.Groups.GroupsEnum.LopTop
 
 
             },
@@ -43,8 +43,8 @@
                 Id=4,
                 Model="A70",
                 Color="yellow",
-                Brands=StorageModel.Brand.Huawi,
-                Groupsenum=StorageModel.Groups.Mobile
+                Brands=Enum.Brands.BrandEnum.Huawi,
+                Groupsenum=Enum.Groups.GroupsEnum.Mobile
 
 
             },
