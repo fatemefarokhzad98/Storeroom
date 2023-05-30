@@ -61,23 +61,26 @@ namespace Storeroommanagement.Models
         }
         public static bool DeletProduct(int id)
         {
-            var result = false;
+            
             var products = ShowProduct();
             var product = products.Where(x => x.Id ==id)
                 .FirstOrDefault();
             if (product != null)
             {
+                
                 File.Delete(_path);
+               
                 foreach (var item in products)
                 {
+                    item.IsDelete = true;
                     var userjson = JsonConvert.SerializeObject(item);
                     File.AppendAllText(_path, userjson + "\n");
 
                 }
 
                 DeleteTime(id, MiladiToShamsi(DateTime.Now));
-                return product.IsDelete == true;
-                
+                return true;
+
 
             }
             return false;
