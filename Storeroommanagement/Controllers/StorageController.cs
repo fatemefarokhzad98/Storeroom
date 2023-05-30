@@ -12,6 +12,10 @@ namespace Storeroommanagement.Controllers
         {
             return View();
         }
+        public IActionResult AddProduct2()
+        {
+            return View();
+        }
         [ HttpPost]
         public IActionResult AddProduct(StorageModel storageModel)
         {
@@ -19,7 +23,14 @@ namespace Storeroommanagement.Controllers
           
             return RedirectToAction("ShowProduct");
         }
-        
+        [HttpPost]
+        public IActionResult AddProduct2(StorageModel storageModel)
+        {
+            DataFile.AddProducts(storageModel);
+
+            return RedirectToAction("ShowProduct");
+        }
+
         public IActionResult DeleteProduct(int id)
         {
             DataFile.DeletProduct(id);

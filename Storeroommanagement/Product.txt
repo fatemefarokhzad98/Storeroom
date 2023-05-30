@@ -1,6 +1,11 @@
-{"Id":1,"Color":"blue","Model":"s3","Groupsenum":1,"Brands":1,"IsDelete":false}
-{"Id":2,"Color":"hh","Model":"ggg","Groupsenum":2,"Brands":1,"IsDelete":false}
-{"Id":3,"Color":"hh","Model":"ggg","Groupsenum":2,"Brands":1,"IsDelete":false}
-{"Id":4,"Color":"jiohiu","Model":"ggk","Groupsenum":1,"Brands":1,"IsDelete":false}
-{"Id":5,"Color":"ml;kn","Model":"cktxf","Groupsenum":2,"Brands":1,"IsDelete":false}
-{"Id":6,"Color":"l,[,kp;","Model":",l,;pl","Groupsenum":2,"Brands":1,"IsDelete":false}
+{"Id":2,"Color":" kj k","Model":"nkj k","Groupsenum":2,"Brands":1,"IsDelete":true}
+{"Id":3,"Color":" mhv","Model":"jhchm","Groupsenum":0,"Brands":1,"IsDelete":false}
+{"Id":4,"Color":"hj c,j","Model":"uvgliv","Groupsenum":0,"Brands":1,"IsDelete":false}
+{"Id":5,"Color":"bkjvk","Model":"vjv","Groupsenum":0,"Brands":1,"IsDelete":false}
+{"Id":6,"Color":"vyjli","Model":"jchgc","Groupsenum":0,"Brands":1,"IsDelete":false}
+{"Id":7,"Color":"jf","Model":"dy","Groupsenum":0,"Brands":1,"IsDelete":false}
+{"Id":8,"Color":"k.vlyc","Model":"vhjj","Groupsenum":0,"Brands":1,"IsDelete":false}
+{"Id":9,"Color":"veve","Model":"frfe","Groupsenum":0,"Brands":1,"IsDelete":false}
+{"Id":10,"Color":"xjrxj","Model":"uck","Groupsenum":0,"Brands":1,"IsDelete":false}
+{"Id":11,"Color":"ger","Model":"gwgr","Groupsenum":0,"Brands":1,"IsDelete":false}
+{"Id":12,"Color":"jblvbi","Model":"bkb","Groupsenum":0,"Brands":1,"IsDelete":false}

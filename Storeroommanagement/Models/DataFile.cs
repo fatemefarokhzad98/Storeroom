@@ -14,6 +14,8 @@ namespace Storeroommanagement.Models
         {
             
             var products = ShowProduct();
+
+            
             if (products.Count==0)
             {
                 storageModel.Id = 1;
@@ -59,12 +61,14 @@ namespace Storeroommanagement.Models
 
 
         }
-        public static bool DeletProduct(int id)
+        public static void DeletProduct(int id)
         {
             
             var products = ShowProduct();
             var product = products.Where(x => x.Id ==id)
                 .FirstOrDefault();
+
+            product.IsDelete = true;
             if (product != null)
             {
                 
@@ -72,18 +76,19 @@ namespace Storeroommanagement.Models
                
                 foreach (var item in products)
                 {
-                    item.IsDelete = true;
+                  
                     var userjson = JsonConvert.SerializeObject(item);
                     File.AppendAllText(_path, userjson + "\n");
-
+                   
                 }
-
+              
+                
                 DeleteTime(id, MiladiToShamsi(DateTime.Now));
-                return true;
+               
 
 
             }
-            return false;
+            
         }
         public static  void EditProduct( StorageModel storageModel)
         {
@@ -127,17 +132,21 @@ namespace Storeroommanagement.Models
             stringBuilder.Append(persianCalendar.GetDayOfMonth(dateTime).ToString("00"));
             return stringBuilder.ToString();
         }
-        public static void AddTime(int id,string createtime)
+        public static void AddTime(int ID,string createtime)
         {
-            var timesadd= ShowTimeProduct();
-            var timeadd = timesadd.Where(x => x.Id == id).FirstOrDefault();
-            if (timeadd != null)
-            {
-                timeadd.AddTimes = createtime;
 
+            var timeadd = new TimeProduct
+            {
+                Id = ID,
+                AddTimes = createtime,
+                DeleteTimes = null
+
+
+
+            };
                var jsonuser= JsonConvert.SerializeObject(timeadd);
                 File.AppendAllText(_pathtime,jsonuser+ "\n");
-            }
+            
 
         }
         public static void DeleteTime(int id, string deletetime)
@@ -147,8 +156,13 @@ namespace Storeroommanagement.Models
             if (timedelete != null)
             {
                 timedelete.DeleteTimes = deletetime;
-                 var jsonuser = JsonConvert.SerializeObject(timedelete);
-                File.AppendAllText(_pathtime, jsonuser + "\n");
+                
+                File.Delete(_pathtime);
+                foreach (var item in timesdelete)
+                {
+                    var jsonuser = JsonConvert.SerializeObject(timedelete);
+                    File.AppendAllText(_pathtime, jsonuser + "\n");
+                }
             }
 
         }
