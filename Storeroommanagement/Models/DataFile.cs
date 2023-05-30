@@ -25,6 +25,7 @@ namespace Storeroommanagement.Models
             }
             var userjson = JsonConvert.SerializeObject(storageModel);
             File.AppendAllText(_path, userjson+"\n");
+           AddTime(storageModel.Id, MiladiToShamsi(DateTime.Now));
 
         }
         public static List<StorageModel> ShowProduct()
@@ -58,14 +59,14 @@ namespace Storeroommanagement.Models
 
 
         }
-        public static bool DeletProduct(StorageModel storageModel)
+        public static bool DeletProduct(int id)
         {
+            var result = false;
             var products = ShowProduct();
-            var product = products.Where(x => x.Id == storageModel.Id)
+            var product = products.Where(x => x.Id ==id)
                 .FirstOrDefault();
             if (product != null)
             {
-                return product.IsDelete == true;
                 File.Delete(_path);
                 foreach (var item in products)
                 {
@@ -74,10 +75,12 @@ namespace Storeroommanagement.Models
 
                 }
 
-
+                DeleteTime(id, MiladiToShamsi(DateTime.Now));
+                return product.IsDelete == true;
+                
 
             }
-            return storageModel.IsDelete == false;
+            return false;
         }
         public static  void EditProduct( StorageModel storageModel)
         {

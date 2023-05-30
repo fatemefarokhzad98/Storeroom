@@ -16,14 +16,14 @@ namespace Storeroommanagement.Controllers
         public IActionResult AddProduct(StorageModel storageModel)
         {
             DataFile.AddProducts(storageModel);
-            DataFile.AddTime(storageModel.Id, DataFile.MiladiToShamsi(DateTime.Now));
+          
             return RedirectToAction("ShowProduct");
         }
         
-        public IActionResult DeleteProduct(StorageModel storageModel)
+        public IActionResult DeleteProduct(int id)
         {
-            DataFile.DeletProduct(storageModel);
-            DataFile.DeleteTime(storageModel.Id, DataFile.MiladiToShamsi(DateTime.Now));
+            DataFile.DeletProduct(id);
+            
             return View();
         }
       

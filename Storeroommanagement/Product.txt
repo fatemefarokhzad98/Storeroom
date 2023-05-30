@@ -1,0 +1,5 @@
+{"Id":1,"Color":"blue","Model":"s3","Groupsenum":1,"Brands":1,"IsDelete":false}
+{"Id":2,"Color":"hh","Model":"ggg","Groupsenum":2,"Brands":1,"IsDelete":false}
+{"Id":3,"Color":"hh","Model":"ggg","Groupsenum":2,"Brands":1,"IsDelete":false}
+{"Id":4,"Color":"jiohiu","Model":"ggk","Groupsenum":1,"Brands":1,"IsDelete":false}
+{"Id":5,"Color":"ml;kn","Model":"cktxf","Groupsenum":2,"Brands":1,"IsDelete":false}
