@@ -11,7 +11,9 @@ namespace Storeroommanagement.Models
         public string Model { get; set; }
         public GroupsEnum Groupsenum { get; set; }
         public BrandEnum Brands { get; set; }
-        public DateTime Time { get; set; }
+      
+        public bool IsDelete { get; set; } = false;
+
 
     }
 }

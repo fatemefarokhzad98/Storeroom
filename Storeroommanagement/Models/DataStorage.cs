@@ -10,7 +10,7 @@ namespace Storeroommanagement.Models
     {
        
 
-        //میخوام به صورت پیش فرض هم به داده هایی که از قبل نشتم یه ساعتی رو بگم
+       
         private static List<StorageModel> _storageModels = new List<StorageModel>()
         {
             
@@ -66,18 +66,18 @@ namespace Storeroommanagement.Models
 
         };
         public static void AddProducts( StorageModel storageModel)
-        {//اینجا راه های دیگش که از خطا جلوگیری میکنه چیه
+        {
             storageModel.Id = _storageModels.Last().Id + 1;
             _storageModels.Add(storageModel);
            
-            MiladiToShamsi(DateTime.Now);
+         
 
         }
         public static void DeleteProducts( int id)
         {
             var product= _storageModels.Where(x => x.Id == id).FirstOrDefault();
             _storageModels.Remove(product);
-            MiladiToShamsi(DateTime.Now);
+           
 
             
         }

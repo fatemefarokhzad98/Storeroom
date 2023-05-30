@@ -6,7 +6,7 @@ namespace Storeroommanagement.Controllers
     
     public class StorageController : Controller
     {
-        StorageModel storageModel=new StorageModel();
+      
        
         public IActionResult AddProduct()
         {
@@ -15,32 +15,35 @@ namespace Storeroommanagement.Controllers
         [ HttpPost]
         public IActionResult AddProduct(StorageModel storageModel)
         {
-            DataStorage.AddProducts(storageModel);
+            DataFile.AddProducts(storageModel);
+            DataFile.AddTime(storageModel.Id, DataFile.MiladiToShamsi(DateTime.Now));
             return RedirectToAction("ShowProduct");
         }
         
-        public IActionResult DeleteProduct(int id)
+        public IActionResult DeleteProduct(StorageModel storageModel)
         {
-            DataStorage.DeleteProducts(id);
+            DataFile.DeletProduct(storageModel);
+            DataFile.DeleteTime(storageModel.Id, DataFile.MiladiToShamsi(DateTime.Now));
             return View();
         }
       
         [HttpGet]
         public IActionResult  EditProduct(int id)
         {
+
            
 
-            return View(DataStorage.GetId(id));
+            return View(DataFile.GetId(id));
         }
         [HttpPost]
         public IActionResult EditProduct(StorageModel storageModel)
         {
-            DataStorage.EditProducts(storageModel);
+            DataFile.EditProduct(storageModel);
             return RedirectToAction("ShowProduct");
         }
         public IActionResult ShowProduct()
         {
-            var Products=DataStorage.ShowProducts();
+            var Products=DataFile.ShowProduct();
             return View(Products);
         }
     }
